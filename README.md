@@ -67,6 +67,37 @@ Many students—especially those unaware of higher education’s impact—miss o
 
 ---
 
+# NextStep Tech Stack
+
+Here’s a high-level overview of the tools and technologies powering **NextStep**:
+
+1. **Frontend & UI**  
+   - **[Streamlit](https://docs.streamlit.io/)**: A Python-based framework for quickly building interactive web apps.  
+   - **Altair** or **Plotly** (Optional): For data visualization (charts, graphs, etc.).  
+   - **PyDeck** (Optional): To display maps and visualize geospatial data in 3D.
+
+2. **Backend & Data Processing**  
+   - **Python**: The main language for data handling, business logic, and model integration.  
+   - **[Geopy](https://geopy.readthedocs.io/)**: For geospatial calculations (distances, coordinates).  
+   - **[Pandas](https://pandas.pydata.org/)**: For data manipulation, filtering, and loading CSV/dataset files.
+   - **RAG Model** (Retrieval-Augmented Generation, optional advanced feature): Used **GPT-4o-mini, Langchain, Pinecone vector database** for personalized recommendations by combining user input with a knowledge base or LLM.
+
+3. **Database / Data Storage**  
+   - **CSV Files** (https://collegescorecard.ed.gov/data/): Utilized the dataset from US Government's Department of Education.  
+   - ** Database**: **PostgreSQL**
+
+4. **Deployment**  
+   - **Streamlit Cloud**: Quick and easy hosting for testing and demonstrations.  
+
+5. **Version Control / Collaboration**  
+   - **Git & GitHub**: For source code management, version control, and team collaboration.  
+
+6. **Development Environment**  
+   - **VS Code**: Common IDE with `.devcontainer` support for a consistent coding environment.  
+   - **Python 3.9+**: Ensures compatibility with the latest packages and Streamlit features.
+
+---
+
 ## Project Structure
 
 ```plaintext
