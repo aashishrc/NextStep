@@ -6,10 +6,16 @@ from langchain_openai import ChatOpenAI
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 def invokeSearch(user_query):
 
-    pc = Pinecone(api_key="***")
+    PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
+    OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
+
+    pc = Pinecone(api_key=PINECONE_API_KEY)
 
     index_name = "college-index"
     dimension = 1024  
@@ -18,7 +24,7 @@ def invokeSearch(user_query):
     # Initialize Pinecone embeddings
     embeddings = PineconeEmbeddings(
         model="multilingual-e5-large",
-        pinecone_api_key="***"
+        pinecone_api_key=PINECONE_API_KEY
     )
     
     # Initialize Pinecone vector store
@@ -26,7 +32,7 @@ def invokeSearch(user_query):
     vector_store = PineconeVectorStore(index, embeddings, "text")
 
     llm = ChatOpenAI(
-        openai_api_key="***",
+        openai_api_key=OPENAI_API_KEY,
         model_name='gpt-4o-mini',
         temperature=0.0
     )

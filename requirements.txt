@@ -7,3 +7,5 @@ pinecone
 openai
 langchain_openai
 langchain_pinecone
+os
+dotenv
