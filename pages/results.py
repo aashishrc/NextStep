@@ -4,6 +4,8 @@ import pydeck as pdk
 import math
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
+import model
+import utils.data_scraper as ds
 
 # Haversine formula to calculate distance in miles
 def haversine(lat1, lon1, lat2, lon2):
@@ -25,7 +27,6 @@ def get_lat_lon_from_zip(zip_code):
         st.error("Geocoder service timed out. Please try again.")
     return None
 
-# Define community colleges
 def get_boston_colleges():
     return [
         {"Name": "Bunker Hill Community College", "Latitude": 42.3732, "Longitude": -71.0594, "Tuition": 10000},
@@ -40,16 +41,25 @@ def get_boston_colleges():
         {"Name": "Holyoke Community College", "Latitude": 42.2043, "Longitude": -72.6405, "Tuition": 9200}
     ]
 
+
 def college_search_page():
     st.title("College Search")
     
     # User input for search criteria
     st.subheader("Enter Search Criteria")
-    area_of_interest = st.text_input("Area of Interest")
-    gender = st.selectbox("Gender", options=["Any", "Male", "Female", "Other"])
+    area_of_interest = st.text_input("Area of Interest", st.session_state.get("area_of_interest", ""))
+    gender = st.selectbox("Gender", options=["Any", "Male", "Female", "Other"], index=["Any", "Male", "Female", "Other"].index(st.session_state.get("gender", "Any")))
+    state = st.text_input("Enter State", st.session_state.get("state", ""))
+    city = st.text_input("Enter City", st.session_state.get("city", ""))
     zip_code = st.text_input("Enter ZIP Code")
     
     if st.button("Search"):
+        # Store user input in session state
+        st.session_state.area_of_interest = area_of_interest
+        st.session_state.gender = gender
+        st.session_state.state = state
+        st.session_state.city = city
+        
         # Default to Boston if no ZIP is entered
         if zip_code:
             user_location = get_lat_lon_from_zip(zip_code)
@@ -60,15 +70,16 @@ def college_search_page():
             user_location = {"Latitude": 42.3601, "Longitude": -71.0589}  # Boston Default
 
         current_location = {"Latitude": user_location["Latitude"], "Longitude": user_location["Longitude"], "Name": "Your Location"}
-        results = get_boston_colleges()
-
-        # Calculate distance for each college
-        for college in results:
-            college["Distance"] = haversine(current_location["Latitude"], current_location["Longitude"], 
-                                            college["Latitude"], college["Longitude"])
+        
+        # Invoke model search
+        query = f"{area_of_interest} {user_location['Latitude']},{user_location['Longitude']} {city},{state}"
+        query_result_output = model.invokeSearch(query)
+        print(query_result_output.content)
+        # results = ds.extract_college_info_as_json(query_result_output)
+        # print(results)
 
         # Store results persistently in session state
-        st.session_state.results = results  
+        st.session_state.results = get_boston_colleges()  
         st.session_state.current_location = current_location  # Store user's selected location
 
     # Display search results
@@ -82,7 +93,7 @@ def display_results(results, current_location):
         st.subheader("Search Results")
         for college in results:
             with st.expander(college["Name"]):
-                st.write(f"**Distance:** {college['Distance']:.2f} miles")
+                # st.write(f"**Distance:** {college['Distance']:.2f} miles")
                 st.write(f"**Tuition Cost:** ${college['Tuition']}")
 
     with col2:
