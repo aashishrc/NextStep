@@ -3,9 +3,9 @@ geopy
 pandas
 pydeck
 langchain
-pinecone
+langchain-community
+langchain-openai
+langchain-pinecone
+pinecone-client
 openai
-langchain_openai
-langchain_pinecone
-os
-dotenv
+python-dotenv
