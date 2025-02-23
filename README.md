@@ -84,7 +84,7 @@ Here’s a high-level overview of the tools and technologies powering **NextStep
 
 3. **Database / Data Storage**  
    - **CSV Files** (https://collegescorecard.ed.gov/data/): Utilized the dataset from US Government's Department of Education.  
-   - ** Database**: **PostgreSQL**
+   - **Database**: **MongoDB**
 
 4. **Deployment**  
    - **Streamlit Cloud**: Quick and easy hosting for testing and demonstrations.  
