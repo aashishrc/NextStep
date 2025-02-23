@@ -190,3 +190,6 @@ def show_landing():
     
     if st.button("Go to Search Page"):
         st.switch_page("pages/results.py")
+
+if __name__ == "__main__":
+    show_landing()

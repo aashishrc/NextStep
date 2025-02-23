@@ -3,6 +3,7 @@ import streamlit as st
 import pages.landing as landing_page
 import pages.search as search_page
 import pages.results as results_page
+import pages.details as details_page
 import model
 
 
@@ -23,6 +24,8 @@ def main():
         landing_page.show_landing()
     elif st.session_state["page"] == "search":
         search_page.show_search()
+    elif st.session_state["page"] == "details":
+        details_page.show_details()
     else:
         # fallback or default
         landing_page.show_landing()
