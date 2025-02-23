@@ -31,7 +31,7 @@ The project is organized as follows:
 │   ├── search.py
 │   ├── results.py
 │   └── details.py
-c utils/
+├── utils/
 │   └── model.py 
 ├── README.md
 ├── streamlit_app.py
