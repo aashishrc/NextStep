@@ -112,8 +112,7 @@ NextStep/
     │   ├── search.py
     │   ├── results.py
     │   └── details.py
-    ├── utils/
-    │   └── model.py
+    ├── model.py
     ├── README.md
     ├── streamlit_app.py
     └── requirements.txt
