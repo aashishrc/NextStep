@@ -24,7 +24,7 @@ def main():
         search_page.show_search()
     else:
         # fallback or default
-        show_landing()
+        landing_page.show_landing()
 
 if __name__ == "__main__":
     main()
