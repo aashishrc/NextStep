@@ -3,6 +3,7 @@ import streamlit as st
 import pages.landing as landing_page
 import pages.search as search_page
 import pages.results as results_page
+import model
 
 
 # Configure the page (optional)

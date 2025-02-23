@@ -2,3 +2,10 @@ streamlit>=1.26.0
 geopy
 pandas
 pydeck
+langchain
+pinecone
+openai
+langchain_openai
+langchain_pinecone
+os
+dotenv
