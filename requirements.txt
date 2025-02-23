@@ -1,7 +1,7 @@
 streamlit>=1.26.0
 geopy
 pandas
-pinecone
+pinecone-client
 pydeck
 langchain
 langchain-community
