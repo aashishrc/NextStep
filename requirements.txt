@@ -1,11 +1,11 @@
 streamlit>=1.26.0
 geopy
 pandas
+pinecone
 pydeck
 langchain
 langchain-community
 langchain-openai
 langchain-pinecone
-pinecone-client
 openai
 python-dotenv
