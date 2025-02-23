@@ -1,25 +1,48 @@
-# 📦 Streamlit App Starter Kit 
-```
-⬆️ (Replace above with your app's name)
-```
+# 🎓 NextStep
 
-Description of the app ...
+Empowering learners from all walks of life to discover, aspire, and achieve their educational goals. This application is designed to help users explore schools and opportunities based on their preferences who are not aware about the importance of higher education. It provides insights into nearest colleges, scholarships, financial aid, and more.
 
 ## Demo App
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://next-step.streamlit.app/)
 
-## GitHub Codespaces
+## Why Education Matters
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/app-starter-kit?quickstart=1)
+Education is a powerful tool that can transform lives. Here are some key reasons why education is important:
 
-## Section Heading
+- **Higher Earning Potential**: On average, bachelor’s degree holders earn 40% more over a lifetime than high school graduates.
+- **Better Job Security**: College graduates have significantly lower unemployment rates.
+- **Career Growth**: Many emerging fields (e.g., technology, healthcare) prefer or require a college degree.
+- **Improved Quality of Life**: Educated individuals often have better health, increased civic participation, and greater life satisfaction.
 
-This is filler text, please replace this with text for this section.
+“Education is the most powerful weapon which you can use to change the world.” — Nelson Mandela
+
+## Project Structure
+
+The project is organized as follows:
+
+NextStep/
+my_streamlit_app/
+├── .devcontainer/
+│   ├── devcontainer.json
+├── .streamlit/
+│   ├── config.toml
+├── pages/
+│   ├── landing.py
+│   ├── search.py
+│   ├── results.py
+│   └── details.py
+├── utils/
+│   └── model.py 
+├── README.md
+├── streamlit_app.py
+└── requirements.txt
+
 
 ## Further Reading
 
-This is filler text, please replace this with a explanatory text about further relevant resources for this repo
-- Resource 1
-- Resource 2
-- Resource 3
+- [US Department of Education Dataset](https://collegescorecard.ed.gov/data/)
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Geopy Documentation](https://geopy.readthedocs.io/)
+- [Pandas Documentation](https://pandas.pydata.org/)
+- [Pydeck Documentation](https://deckgl.readthedocs.io/en/latest/)
