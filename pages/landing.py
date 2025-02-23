@@ -1,6 +1,7 @@
 import streamlit as st
 import altair as alt
 import pandas as pd
+import pages.results as college_search_page
 
 def show_landing():
     st.title("Welcome to NextStep!")
@@ -186,5 +187,6 @@ def show_landing():
     
     # Simple 'Get Started' button
     st.write("Ready to explore schools?")
+    
     if st.button("Go to Search Page"):
-        st.session_state["page"] = "results"
+        st.switch_page("pages/results.py")
