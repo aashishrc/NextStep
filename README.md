@@ -20,9 +20,8 @@ Education is a powerful tool that can transform lives. Here are some key reasons
 ## Project Structure
 
 The project is organized as follows:
-
-NextStep/
-my_streamlit_app/
+```
+├── NextStep/
 ├── .devcontainer/
 │   ├── devcontainer.json
 ├── .streamlit/
@@ -32,12 +31,12 @@ my_streamlit_app/
 │   ├── search.py
 │   ├── results.py
 │   └── details.py
-├── utils/
+c utils/
 │   └── model.py 
 ├── README.md
 ├── streamlit_app.py
 └── requirements.txt
-
+```
 
 ## Further Reading
 
